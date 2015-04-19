@@ -13,8 +13,8 @@ You will be able to change your Author beyond recognition in few minutes, even i
 
 Go back to customize page to see options:
 
-**Background Image & Blurred Image**
-We make special effect that you can upload big image for Background of top page and also if you blurred your image or add any other image in Blurred option. It’s show when scroll down!
+**First BG & Second BG Image**
+We make special effect that you can upload big image for Background of top page and also if you blurred your image or add any other image in Second BG option. Save and open your blog in another page: It’s show when scroll down!
 
 **Logo**
 By default in top of your tumblr page display Name of your Tumblr with large font size. If you upload an image with replace this image from your Site Name

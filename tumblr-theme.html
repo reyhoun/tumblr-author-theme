@@ -15,8 +15,8 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Options -->
-    <meta name="image:Background" content=""/>
-    <meta name="image:Blurred" content=""/>
+    <meta name="image:First BG" content=""/>
+    <meta name="image:Second BG" content=""/>
     <meta name="image:Logo" content=""/>
     <meta name="color:Header Text" content="#33333d"/>
     <meta name="color:Body Text" content="#33333d"/>
@@ -234,38 +234,38 @@
         text-align: center;
         color: {color:Header Text};
 
-        {block:IfBackgroundImage}
-          background: url('{image:Background}') center top no-repeat;
+        {block:IfFirstBGImage}
+          background: url('{image:First BG}') center top no-repeat;
           background-size: cover;
-        {/block:IfBackgroundImage}
+        {/block:IfFirstBGImage}
         
-        {block:IfBlurredImage}
+        {block:IfSecondBGImage}
           position: relative;
           overflow: hidden;
-        {/block:IfBlurredImage}
+        {/block:IfSecondBGImage}
       }
 
       #heading {
         z-index: 1;
 
-        {block:IfBlurredImage}
+        {block:IfSecondBGImage}
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
-        {/block:IfBlurredImage}
+        {/block:IfSecondBGImage}
 
-        {block:IfNotBlurredImage}
+        {block:IfNotSecondBGImage}
           position: absolute;
           top: 50%;
           margin-top: -150px;
           text-align: center;
           width: 100%;
-        {/block:IfNotBlurredImage}
+        {/block:IfNotSecondBGImage}
       }
       
-      {block:IfBlurredImage}
+      {block:IfSecondBGImage}
         #heading hgroup {
           -webkit-transform: translate(-50%, -50%);
           -moz-transform: translate(-50%, -50%);
@@ -285,12 +285,12 @@
           right: 0;
           left: 0;
           bottom: 0;
-          background: url('{image:Blurred}') center top no-repeat;
+          background: url('{image:Second BG}') center top no-repeat;
           background-size: cover;
           z-index: 0;
           opacity: 0;
         }
-      {/block:IfBlurredImage}
+      {/block:IfSecondBGImage}
 
       #logo {
         font: 150px "{text:Header Google Web Font Name}", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
@@ -642,9 +642,9 @@
         </ul>
       </div>
       <div id="heading">
-        {block:IfBlurredImage}
+        {block:IfSecondBGImage}
           <hgroup>
-        {/block:IfBlurredImage}
+        {/block:IfSecondBGImage}
 
         {block:IfLogoImage}
           <img src="{image:Logo}" alt="{Title}">
@@ -658,9 +658,9 @@
             <div id="tagline">{Description}</div>
         {/block:IfShowDescription}
 
-        {block:IfBlurredImage}
+        {block:IfSecondBGImage}
           </hgroup>
-        {/block:IfBlurredImage}
+        {/block:IfSecondBGImage}
       </div>
       <div class="overlay"></div>
     </section>
@@ -941,7 +941,7 @@
         </script>
       {/block:IfEnableInfiniteScroll}
 
-      {block:IfBlurredImage}
+      {block:IfSecondBGImage}
         <script>
           /**
           * Created by Sallar Kaboli <sallar.kaboli@gmail.com>
@@ -1045,6 +1045,6 @@
 
           var __links = document.querySelectorAll('a');for (var i = 0, l = __links.length; i < l; i++) { __links[i].addEventListener('click', function(e) {parent.window.postMessage(this.href, '*');}, false);}
         </script>
-      {/block:IfBlurredImage}
+      {/block:IfSecondBGImage}
   </body>
 </html>
