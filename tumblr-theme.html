@@ -1,0 +1,1050 @@
+<html>
+  <head>
+    <title>{block:TagPage}{Tag} - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+    
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" title="{Title} RSS" href="{RSS}"/>
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={text:Header Google Web Font Name}&amp;subset=latin">
+    <link href='http://fonts.googleapis.com/css?family={text:Body Google Web Font Name}' rel='stylesheet' type='text/css'>
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Options -->
+    <meta name="image:Background" content=""/>
+    <meta name="image:Blurred" content=""/>
+    <meta name="image:Logo" content=""/>
+    <meta name="color:Header Text" content="#33333d"/>
+    <meta name="color:Body Text" content="#33333d"/>
+    <meta name="color:Body Text Second" content="#eeeeee"/>
+    <meta name="color:Link Color" content="#33a0c0"/>
+    <meta name="color:Link Hover Color" content="#66c2e2"/>
+    <meta name="color:Odd Background" content="#ffffff"/>
+    <meta name="color:Even Background" content="#fafafa"/>
+    <meta name="text:Header Google Web Font Name" content="Italiana" />
+    <meta name="text:Body Google Web Font Name" content="Open Sans" />
+
+    <meta name="if:RTL" content="0"/>
+    <meta name="if:Enable Infinite Scroll" content="1"/>
+    <meta name="if:Show Description" content="1"/>
+    <meta name="if:Show Photo Exif" content="1"/>
+    <meta name="if:Show Like and Reblog Icon" content="1"/>
+    <meta name="if:Show Date" content="1"/>
+    <meta name="if:Show Note Count" content="1"/>
+    <meta name="if:Show Archive" content="1"/>
+
+    <meta name="text:Archive" content="Archive"/>
+    <meta name="text:Ask" content="Ask me"/>
+    <meta name="text:Submit" content="Submit"/>
+    <meta name="text:Google Analytics ID" content="" />
+    <meta name="text:Disqus Shortname" content="" />
+    
+    <meta name="text:Photos Max Width" content="750"/>
+
+    <!-- SOCIAL MEDIA -->
+    <meta name="text:Facebook" content=""/>
+    <meta name="text:Twitter" content=""/>
+    <meta name="text:Google Plus" content=""/>
+    <meta name="text:Pinterest" content=""/>
+    <meta name="text:Linkedin" content=""/>
+    <meta name="text:Instagram" content=""/>
+    <meta name="text:Dribbble" content=""/>
+    <meta name="text:Vimeo" content=""/>
+    <meta name="text:Youtube" content=""/>
+    <meta name="text:Github" content=""/>
+    <meta name="text:Flickr" content=""/>
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+      * {
+        -webkit-box-sizing: border-box;
+      }
+      .group {
+        zoom: 1;
+        /* For IE 6/7 (trigger hasLayout) */
+      }
+      .group:before, .group:after {
+        content: '';
+        display: table;
+      }
+      .group:after {
+        clear: both;
+      }
+      a {
+        -webkit-transition:color 300ms ease-out;
+        -moz-transition:color 300ms ease-out;
+        transition:color 300ms ease-out;
+      }
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        font: 15px/1.5 "{text:Body Google Web Font Name}", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        background-color: {color:Odd Background};
+        margin: 0;
+        color: {color:Body Text};
+        overflow-y: scroll;
+        overflow-x: hidden;
+        {block:IfRTL}
+          direction: rtl;
+        {/block:IfRTL}
+      }
+      
+      .fright {
+        float: right;
+      }
+
+      .fleft {
+        float: left;
+      }
+
+      iframe, img, embed, object, video {
+          max-width: 100%;
+      }
+
+      a {
+        color: {color:Link Color};
+      }
+
+      a:hover {
+        color: {color:Link Hover Color};
+      }
+
+      blockquote {
+          background: rgba(0, 0, 0, 0.05);
+          margin: 0;
+          padding: 1% 2%;
+          border-radius: 7px;
+          margin-bottom: 5px;
+      }
+      
+      cite {
+        font-size: .8em;
+      }
+
+      cite a {
+        text-decoration: none;
+      }
+
+      section {
+        min-height: 50%;
+      }
+
+      section:not(:last-child) {
+        border-bottom: 1px solid {color:Even Background};
+      }
+
+      section:not(#top) {
+        padding: 150px 100px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      section#footer {
+        padding: 50px 100px;
+      }
+
+      pre {
+        background: {color:Even Background};
+        border-top: 1px solid {color:Body Text Second};
+        border-bottom: 1px solid {color:Body Text Second};
+        padding: 25px;
+        font-size: .9em;
+        font-family: monospace;
+        overflow-x: auto;
+      }
+
+      .content img {
+        max-width: 100%;
+      }
+      
+      img,
+      .photoset_photo {
+        max-width: 100% !important;
+        height: auto;
+      }
+
+      code {
+        font-family: monospace;
+        font-size: .9em;
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 2em;
+        font-weight: normal;
+      }
+      h1 a {
+        color: {color:Body Text};
+        text-decoration: none;
+      }
+
+      h1:not(:first-child) {
+        margin-top: 50px;
+      }
+
+      h2 {
+        margin-top: 80px;
+        font-size: 1.2em;
+      }
+
+      h3 {
+        margin-top: 40px;
+        font-size: 1em;
+      }
+
+      ul li {
+        font-size: .8em;
+      }
+      .post ul li {
+        {block:IfRTL}
+          text-align: right;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+          text-align: left;
+        {/block:IfNotRTL}
+      }
+
+      section:nth-child(2n) {
+        background-color: {color:Even Background};
+        box-shadow: inset 0 1px 0 0 {color:Odd Background};
+      }
+
+      .content {
+        margin: 0 auto;
+        max-width: {text:Photos Max Width}px;
+        {block:IfRTL}
+         text-align: right;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+         text-align: left;
+        {/block:IfNotRTL}
+      }
+
+      #top {
+        height: 100%;
+        text-align: center;
+        color: {color:Header Text};
+
+        {block:IfBackgroundImage}
+          background: url('{image:Background}') center top no-repeat;
+          background-size: cover;
+        {/block:IfBackgroundImage}
+        
+        {block:IfBlurredImage}
+          position: relative;
+          overflow: hidden;
+        {/block:IfBlurredImage}
+      }
+
+      #heading {
+        z-index: 1;
+
+        {block:IfBlurredImage}
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        {/block:IfBlurredImage}
+
+        {block:IfNotBlurredImage}
+          position: absolute;
+          top: 50%;
+          margin-top: -150px;
+          text-align: center;
+          width: 100%;
+        {/block:IfNotBlurredImage}
+      }
+      
+      {block:IfBlurredImage}
+        #heading hgroup {
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 2;
+          width: 100%;
+        }
+        #top .overlay {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          background: url('{image:Blurred}') center top no-repeat;
+          background-size: cover;
+          z-index: 0;
+          opacity: 0;
+        }
+      {/block:IfBlurredImage}
+
+      #logo {
+        font: 150px "{text:Header Google Web Font Name}", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        text-transform: lowercase;
+      }
+      #logo a {
+        color: {color:Header Text};
+        text-decoration: none;
+      }
+
+      #tagline {
+        font-size: 16px;
+      }
+
+      #menu {
+        position: fixed;
+        top: 35px;
+        {block:IfRTL}
+          left: 30px;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+           right: 30px;
+        {/block:IfNotRTL}
+        z-index: 50;
+      }
+
+      #menu:hover ul {
+        display: block;
+      }
+
+      #menu a {
+        color: {color:Body Text};
+      }
+
+      #menu a#toggle {
+        position: absolute;
+        top: 0;
+        {block:IfRTL}
+         left: 0;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+         right: 0;
+        {/block:IfNotRTL}
+        padding: 5px;
+        background: {color:Even Background};
+        border-radius: 2px;
+        border: 1px solid transparent;
+        z-index: 5;
+        opacity: 0.8;
+      }
+
+      #menu:hover a#toggle {
+        border: 1px solid {color:Odd Background};
+        border-bottom: none;
+        opacity: 1;
+      }
+
+      #menu ul {
+        display: none;
+        position: absolute;
+        top: 30px;
+        {block:IfRTL}
+         left: 0;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+         right: 0;
+        {/block:IfNotRTL}
+        margin: 0;
+        border: 1px solid {color:Odd Background};
+        border-radius: 2px;
+        padding: 15px;
+        background: {color:Even Background};
+        box-shadow: 0 1px 3px 0 {color:Even Background};
+        opacity: 0.9;
+      }
+
+      #menu ul li {
+        list-style: none;
+      }
+
+      #menu ul li a {
+        display: block;
+        text-decoration: none;
+        padding: 3px 0;
+      }
+
+      #menu ul li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Metadata
+      ********************************/
+
+      .metadata {
+        border: 0px solid gray;
+        overflow: auto;
+        font-size: 12px;
+        text-transform: uppercase;
+        max-width: 700px;
+        margin: 20px auto 0;
+        padding: 0;
+      }
+
+      .metadata a {
+        text-decoration: none;
+      }
+
+      .metadata ul {
+        list-style-type: none;
+        text-align: center;
+      }
+ 
+      .metadata ul li {
+        margin: 0 15px 0 0;
+        display: inline;
+      }
+
+      .metadata ul.tags li {
+        background: {color:Body Text Second};
+        padding: 1px 5px;
+        border-radius: 5px;
+      }
+
+      {block:IfShowPhotoExif}
+        /* Image Exif
+        ********************************/
+        .exif li span {
+          color: #ccccca;
+        }
+        .effeckt-caption {
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+        }
+
+        .effeckt-caption img {
+          -webkit-transition: 500ms;
+          -o-transition: 500ms;
+          transition: 500ms;
+        }
+
+        .effeckt-caption figcaption {
+          position: absolute;
+          -webkit-transition: 500ms;
+          -o-transition: 500ms;
+          transition: 500ms;
+          width: 100%;
+          color: #fffffd;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .effeckt-caption .effeckt-figcaption-wrap {
+          position: absolute;
+          bottom: 0;
+        }
+
+        .effeckt-caption[data-effeckt-type="cover-fade"] figcaption {
+          top: 0;
+          left: 0;
+          {block:IfRTL}
+            right: 0;
+          {/block:IfRTL}
+          {block:IfNotRTL}
+            left: 0;
+          {/block:IfNotRTL}
+          height: 100%;
+          opacity: 0;
+        }
+
+        .effeckt-caption[data-effeckt-type="cover-fade"]:hover figcaption,
+        .effeckt-caption[data-effeckt-type="cover-fade"]:active figcaption {
+          opacity: 1;
+        }
+      {/block:IfShowPhotoExif}
+
+      #notes {
+        border-top: solid 1px {color:Body Text Second};
+        width: 60%;
+        margin: 50px auto;
+        {block:IfRTL}
+         text-align: right;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+          text-align: left;
+        {/block:IfNotRTL}
+      }
+
+      #notes h3 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      ol.notes {
+        list-style-type: none;
+        padding: 0 20px;
+      }
+
+      ol.notes li {
+        border-bottom: solid 1px {color:Body Text Second};
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+      }
+
+      ol.notes li .avatar_frame img {
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      ol.notes li blockquote {
+        padding: 2px 8px;
+        {block:IfRTL}
+          margin: 5px 25px 10px 0;
+        {/block:IfRTL}
+        {block:IfNotRTL}
+          margin: 5px 0 10px 25px;
+        {/block:IfNotRTL}
+        border-radius: 5px;
+      }
+
+      {block:IfEnableInfiniteScroll}
+        /* Infinite Scroll
+        ********************************/
+        #infscr-loading {
+          color: {color:Body Text};
+          font-family: italiana;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+        #infscr-loading img {
+          display: none;
+        }
+        #infscr-loading i {
+          bottom: -5px;
+          margin-right: 5px;
+          position: relative;
+        }
+      {/block:IfEnableInfiniteScroll}
+
+      /* Footer
+      ********************************/
+        #pagination {
+          text-align: center;
+        }
+
+        #pagination a {
+          color: {color:Body Text Second};
+        }
+
+        #pagination ul {
+          list-style-type: none;
+        }
+
+        #pagination ul li {
+          display: inline-block;
+        }
+
+        #pagination ul li a {
+          color: {color:Body Text};
+          display: inline-block;
+          font-size: 3rem;
+          line-height: 2.5rem;
+          width: 3rem;
+          height: 3rem;
+          border: solid 1px {color:Body Text Second};
+          border-radius: 50%;
+        }
+
+        #pagination ul li a:hover {
+          border-color: {color:Body Text};
+        }
+      
+      .social-media {
+        list-style-type: none;
+        text-align: center;
+        margin-top: 35px;
+      }
+
+      .social-media li {
+        display: inline;
+        font-size: 2.5em;
+        margin: 10px;
+      }
+
+      .social-media li a {
+        color: {color:Body Text Second};
+      }
+
+      .social-media li a:hover {
+        color: {color:Body Text};
+      }
+
+      /* Media Queries
+      ********************************/
+      @media screen and (max-width: 700px) {
+        section:not(#top) {
+          padding: 50px 25px;
+        }
+
+        #heading {
+          margin-top: -75px;
+        }
+
+        #logo {
+          font-size: 75px;
+        }
+
+        #tagline {
+          font-size: 12px;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        body {
+          font-size: 13px;
+        }
+      }
+
+      /* Custom CSS
+      ********************************/
+      {CustomCSS}
+    </style>
+
+    {block:IfGoogleAnalyticsID}
+      <script>
+        var _gaq=[['_setAccount','{text:Google Analytics ID}'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    {/block:IfGoogleAnalyticsID}
+
+  </head>
+  <body>
+    <section id="top">
+      <div id="menu">
+        <a id="toggle" href="#"><i class="fa fa-bars"></i></i></a>
+        <ul>
+          <li><a href="/">{lang:Home}</a></li>
+
+          {block:HasPages}
+            {block:Pages} 
+              <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages} 
+          {/block:HasPages}
+
+          {block:AskEnabled}<li><a href="/ask">{text:Ask}</a></li>{/block:AskEnabled}
+          {block:SubmissionsEnabled}<li><a href="/submit">{text:Submit}</a></li>{/block:SubmissionsEnabled}
+          {block:ifShowArchive}<li><a href="/archive">{text:Archive}</a></li>{/block:ifShowArchive}
+        </ul>
+      </div>
+      <div id="heading">
+        {block:IfBlurredImage}
+          <hgroup>
+        {/block:IfBlurredImage}
+
+        {block:IfLogoImage}
+          <img src="{image:Logo}" alt="{Title}">
+        {/block:IfLogoImage}
+
+        {block:IfNotLogoImage}
+            <div id="logo"><a href="/">{Title}</a></div>
+        {/block:IfNotLogoImage}
+        
+        {block:IfShowDescription}
+            <div id="tagline">{Description}</div>
+        {/block:IfShowDescription}
+
+        {block:IfBlurredImage}
+          </hgroup>
+        {/block:IfBlurredImage}
+      </div>
+      <div class="overlay"></div>
+    </section>
+    <div id="content">
+      {block:Posts}
+        <section class="post">
+          <div class="content">
+                {block:Text}
+                  <div class="type-text">
+                    {block:Title}
+                      <h1><a href="{Permalink}">{Title}</a></h1>
+                    {/block:Title}
+                    <div class="contnet-body">
+                     {Body}
+                    </div>
+                  </div>
+                {/block:Text}
+
+                {block:Photo}
+                  <div class="type-photo">
+                    <figure class="effeckt-caption" data-effeckt-type="cover-fade">
+                      {LinkOpenTag}
+                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+                      {LinkCloseTag}
+                      {block:IfShowPhotoExif}
+                        {block:Exif}
+                          <figcaption>
+                            <div class="effeckt-figcaption-wrap">
+                              <ul class="exif">
+                                {block:Camera}<li><span>Camera:</span> {Camera}</li>{/block:Camera}
+                                {block:Aperture}<li><span>Aperture:</span> {Aperture}</li>{/block:Aperture}
+                                {block:Exposure}<li><span>Exposure:</span> {Exposure}</li>{/block:Exposure}
+                                {block:FocalLength}<li><span>Focal Length:</span> {FocalLength}</li>{/block:FocalLength}
+                              </ul>
+                            </div>
+                          </figcaption>
+                        {/block:Exif}
+                      {/block:IfShowPhotoExif}
+                    </figure>
+                    <div class="contnet-body">
+                      {block:Caption}
+                        {Caption}
+                      {/block:Caption}
+                    </div>
+                  </div>
+                {/block:Photo}
+
+                {block:Photoset}
+                  <div class="type-photoset">
+                    {Photoset-700}
+                    <div class="contnet-body">
+                      {block:Caption}
+                        {Caption}
+                      {/block:Caption}
+                    </div>
+                  </div>
+                {/block:Photoset}
+
+                {block:Quote}
+                  <div class="type-quote">
+                    <blockquote>{Quote}</blockquote>
+                    {block:Source}
+                      <cite>{Source}</cite>
+                    {/block:Source}
+                  </div>
+                {/block:Quote}
+
+                {block:Link}
+                  <div class="type-link">
+                    <h1><a href="{URL}">{Name}</a></h1>
+                    {block:Description}
+                      <div class="contnet-body">
+                        {Description}
+                      </div>
+                    {/block:Description}
+                  </div>
+                {/block:Link}
+
+                {block:Chat}
+                  <div class="type-chat">
+                    <div class="contnet-body">
+                      <ul>
+                          {block:Lines}
+                            <li class="{Alt}">
+                              <p>
+                                {block:Label}
+                                  <strong>{Label}</strong>
+                                {/block:Label}
+
+                                {Line}
+                              </p>
+                            </li>
+                          {/block:Lines}
+                      </ul>
+                    </div>
+                  </div>
+                {/block:Chat}
+
+                {block:Audio}
+                  <div class="type-audio">
+                    {block:TrackName}
+                      <h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>
+                    {/block:TrackName}
+
+                    {block:AlbumArt}
+                      <img src="{AlbumArtURL}" width="500" height="500"/>
+                    {/block:AlbumArt}
+
+                    {AudioPlayerBlack}
+
+                    <div class="contnet-body">
+                      {block:Caption}
+                        {Caption}
+                      {/block:Caption}
+                    </div>
+                  </div>
+                {/block:Audio}
+
+                {block:Video}
+                  <div class="type-video">
+                    {Video-700}
+                    <div class="contnet-body">
+                     {block:Caption}{Caption}{/block:Caption}
+                    </div>
+                  </div>
+                {/block:Video}
+
+                {block:Answer}
+                  <div class="type-answer">
+                    <h1>{Question}</h1>
+                    <div class="user"><img src="{AskerPortraitURL-96}"/><p>{Asker}</p></div>
+                    <div class="contnet-body">
+                      {Answer}
+                    </div>
+                  </div>
+                {/block:Answer}
+
+                {block:Date}
+                  <footer class="metadata">
+                      <ul class="group">
+                        {block:IfShowDate}
+                          <li class="fleft"><i class="fa fa-clock-o"></i> <a href="{Permalink}"><time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{DayOfMonth} {Month} {Year}</time> </a></li>
+                        {/block:IfShowDate}
+
+                        {block:IfShowNoteCount}
+                          {block:NoteCount}
+                            <li class="fleft"><i class="fa fa-heart-o"></i> <a class="notecount" href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+                          {/block:NoteCount}
+                        {block:IfShowNoteCount}
+                        
+                        {block:ContentSource}
+                          <li class="fleft"><i class="fa fa-external-link"></i> <a href="{SourceURL}" target="_blank">{lang:Source}:{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}
+                          {block:SourceLogo}<img src="{BlackLogoURL}" width="{LogoWidth}"height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}</a></li>
+                        {/block:ContentSource}
+
+                        {block:IfShowLikeAndReblogIcon}
+                          <li class="fright">{ReblogButton}</li>
+                          <li class="fright">{LikeButton}</li>
+                        {/block:IfShowLikeAndReblogIcon}
+                      </ul>
+
+                      {block:PermalinkPage}
+                        {block:HasTags}
+                          <ul class="tags">
+                            {block:Tags}<li><i class="fa fa-tags"></i> <a href="{TagURL}">{Tag}</a> </li>{/block:Tags}
+                          </ul>
+                        {/block:HasTags}
+                        
+                        {block:PostNotes}
+                          <div id="notes">
+                            <h3>Notes</h3>
+                            {PostNotes}
+                          </div>
+                        {/block:PostNotes} 
+                      {/block:PermalinkPage} 
+                  </footer>
+                {/block:Date}
+          </div>
+        </section>
+      {/block:Posts}
+    </div>
+
+    {block:IfDisqusShortname}
+      <section class="disqus">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_shortname = '{text:Disqus Shortname}';
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+    {/block:IfDisqusShortname}
+      <section class="footer">
+        {block:IndexPage}
+          {block:Pagination}
+            <nav id="pagination">
+                <ul>
+                    {block:PreviousPage}
+                      <li><a class="prev" href="{PreviousPage}" title="{lang:Previous page}"><i class="fa fa-angle-left"></i></a></li>
+                    {/block:PreviousPage}
+                    {block:NextPage}
+                      <li><a class="next" href="{NextPage}" title="{lang:Next page}"><i class="fa fa-angle-right"></i></a></li>
+                    {/block:NextPage}
+                </ul>
+            </nav>
+          {/block:Pagination}
+        {/block:IndexPage}
+        <ul class="social-media">
+          {block:IfFacebook}
+            <li><a href="http://facebook.com/{text:Facebook}"><i class="fa fa-facebook-square"></i></a></li>
+          {/block:IfFacebook}
+
+          {block:IfTwitter}
+            <li><a href="http://twitter.com/{text:Twitter}"><i class="fa fa-twitter"></i></a></li>
+          {/block:IfTwitter}
+
+          {block:IfGooglePlus}
+            <li><a href="https://plus.google.com/{Google Plus}"><i class="fa fa-google-plus-square"></i></a></li>
+          {/block:IfGooglePlus}
+
+          {block:IfPinterest}
+            <li><a href="http://pinterest.com/{text:Pinterest}"><i class="fa fa-pinterest"></i></a></li>
+          {/block:IfPinterest}
+
+          {block:IfLinkedin}
+            <li><a href="http://www.linkedin.com/in/{text:Linkedin}"><i class="fa fa-linkedin-square"></i></a></li>
+          {/block:IfLinkedin}
+
+          {block:IfInstagram}
+            <li><a href="http://instagram.com/{text:Instagram}"><i class="fa fa-instagram"></i></a></li>
+          {/block:IfInstagram}
+
+          {block:IfDribbble}
+            <li><a href="http://dribbble.com/{text:Dribbble}"><i class="fa fa-dribbble"></i></a></li>
+          {/block:IfDribbble}
+
+          {block:IfVimeo}
+            <li><a href="http://vimeo.com/{text:Vimeo}"><i class="fa fa-vimeo-square"></i></a></li>
+          {/block:IfVimeo}
+
+          {block:IfYoutube}
+            <li><a href="http://vimeo.com/{text:Vimeo}"><i class="fa fa-youtube-square"></i></a></li>
+          {/block:IfYoutube}
+
+          {block:IfFlickr}
+            <li><a href="http://www.flickr.com/people/{text:Flickr}"><i class="fa fa-flickr"></i></a></li>
+          {/block:IfFlickr}
+
+          {block:IfGithub}
+            <li><a href="https://github.com/{text:Github}"><i class="fa fa-github"></i></a></li>
+          {/block:IfGithub}
+        </ul>
+      </section>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+      {block:IfEnableInfiniteScroll}
+        <script src="http://static.tumblr.com/bqly3o5/nSln0czfk/jquery.infinitescroll.min.js"></script>
+
+        <script>
+          $('#content').infinitescroll({
+            loading: {
+              finishedMsg: "<em>Congratulations, you've reached the end of the internet.</em>",
+              img: '',
+              msgText: '<i class="fa fa-spinner fa-spin fa-2x"></i> Loading new posts...',
+            },
+            navSelector   : '#pagination',
+            nextSelector  : '#pagination a.next',
+            itemSelector  : '#content section.post',
+          });
+        </script>
+      {/block:IfEnableInfiniteScroll}
+
+      {block:IfBlurredImage}
+        <script>
+          /**
+          * Created by Sallar Kaboli <sallar.kaboli@gmail.com>
+          * @sallar
+          *
+          * Released under the MIT License.
+          * http://sallar.mit-license.org/
+          *
+          */
+
+
+          /**
+          * Cache
+          */
+          var $content = $('#heading')
+          , $blur = $('#top .overlay')
+          , wHeight = $(window).height();
+
+          $(window).on('resize', function(){
+            wHeight = $(window).height();
+          });
+
+          /**
+          * requestAnimationFrame Shim
+          */
+          window.requestAnimFrame = (function()
+          {
+            return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+          })();
+
+          /**
+          * Scroller
+          */
+          function Scroller()
+          {
+            this.latestKnownScrollY = 0;
+            this.ticking = false;
+          }
+
+          Scroller.prototype = {
+          /**
+          * Initialize
+          */
+          init: function() {
+            window.addEventListener('scroll', this.onScroll.bind(this), false);
+          },
+
+          /**
+          * Capture Scroll
+          */
+          onScroll: function() {
+            this.latestKnownScrollY = window.scrollY;
+            this.requestTick();
+          },
+
+          /**
+          * Request a Tick
+          */
+          requestTick: function() {
+          if( !this.ticking ) {
+           window.requestAnimFrame(this.update.bind(this));
+          }
+          this.ticking = true;
+          },
+
+          /**
+          * Update.
+          */
+          update: function() {
+          var currentScrollY = this.latestKnownScrollY;
+          this.ticking = false;
+
+          /**
+          * Do The Dirty Work Here
+          */
+          var slowScroll = currentScrollY / 4
+          , blurScroll = currentScrollY * 2;
+
+          $content.css({
+            'transform' : 'translateY(-' + slowScroll + 'px)',
+            '-moz-transform' : 'translateY(-'  + slowScroll + 'px)',
+            '-webkit-transform' : 'translateY(-' + slowScroll + 'px)'
+          });
+
+          $blur.css({
+            'opacity' : blurScroll / wHeight
+            });
+          }
+          };
+
+          /**
+          * Attach!
+          */
+          var scroller = new Scroller();
+          scroller.init();//@ sourceURL=pen.js
+
+          var __links = document.querySelectorAll('a');for (var i = 0, l = __links.length; i < l; i++) { __links[i].addEventListener('click', function(e) {parent.window.postMessage(this.href, '*');}, false);}
+        </script>
+      {/block:IfBlurredImage}
+  </body>
+</html>
