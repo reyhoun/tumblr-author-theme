@@ -1,4 +1,4 @@
-Author - Minimal Premium Tumblr Theme
+Author - A Minimal Premium Tumblr Theme
 ---
 
 ## Installation
